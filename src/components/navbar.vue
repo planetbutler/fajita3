@@ -4,7 +4,7 @@
         <router-link :to="{ name: 'fajita-maker' }">
             Make A Fajita
         </router-link>
-           <router-link :to="{ name: 'contents' }">
+        <router-link :to="{ name: 'contents' }">
             Contents List
         </router-link>
         <router-link :to="{ name: 'complitas' }">
