@@ -1,7 +1,7 @@
 <template>
     <div class="contents">
         <h1>List of Contents</h1>
-        <div v-for="content in contents" :key="content">
+        <div v-for="(content, index) in contents" :key="index">
             {{ content.amount }} of {{ content.name }}
         </div>
         <h3>amount</h3>
@@ -29,13 +29,13 @@ export default {
     },
     data() {
         return {
-            content: '',
+            content: {name:null, amount:null, condition:null, category:null},
         }
     },
     methods: {
         addContent() {
-            this.$store.dispatch('addContent', this.content.name);
-            this.content.name = '';
+            this.$store.dispatch('addContent', this.content);
+            this.content = {name:null, amount:null, condition:null, category:null};
         }
     }
 }
