@@ -6,15 +6,15 @@
             <div>
                 <div class="title">Meats</div>
                 <select  v-model="meat" >
-                    <option v-for="(content, index) in meatoptions" :key="index">{{ content.amount }} of {{ content.name }}</option>
+                    <option v-for="(content, index) in meatoptions" :value="content" :key="index">{{ content.amount }} of {{ content.name }}</option>
                 </select>
                 <div class="title">Veggies</div>
                 <select v-model="veggie" >
-                    <option v-for="(content, index) in veggieoptions" :key="index">{{ content.amount }} of {{ content.name }}</option>
+                    <option v-for="(content, index) in veggieoptions" :value="content" :key="index">{{ content.amount }} of {{ content.name }}</option>
                 </select>
                 <div class="title">Toppings</div>
                 <select v-model="topping" >
-                    <option v-for="(content, index) in toppingoptions" :key="index">{{ content.amount }} of {{ content.name }}</option>
+                    <option v-for="(content, index) in toppingoptions" :value="content" :key="index">{{ content.amount }} of {{ content.name }}</option>
                 </select>
             </div> 
         </div>
@@ -26,12 +26,12 @@
             <div v-show="topping.name">{{ topping.name }}</div>
             <button @click="addComplita">Wrap this fajita up!</button>
         </div>
-        <!--<div v-if="complitas.length>0" class="complita.id">
+        <div v-if="complitas.length>0" class="complita.id">
             <h2>Complitas list</h2>
             <div v-for="complita in complitas" :key="complita.id">
                 {{ complita.id }} - Fajita with {{ complita.content }}
             </div>
-        </div>--> 
+        </div> 
     </div>
 </template>
 
@@ -74,7 +74,10 @@ export default {
         addComplita() {
             const complita={
                 id:1+this.complitas.length,
-                content: this.content
+                meat: this.meat,
+                veggie: this.veggie,
+                topping: this.topping,
+
             };
             this.$store.dispatch('addComplita', complita)
         }
