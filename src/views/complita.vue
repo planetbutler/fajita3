@@ -2,7 +2,9 @@
     <div class="maker">
         <h1>Complita: {{ id }}</h1>
         <div>Warm flour tortilla</div>
-        <div v-show="complita.content.length>0">Content:{{complita.content}}</div>
+        <div v-show="complita.name">Content:{{complita.meat.name}}</div>
+        <div v-show="complita.name">Content:{{complita.veggie.name}}</div>
+        <div v-show="complita.name">Content:{{complita.topping.name}}</div>
     </div>    
 </template>
 

@@ -3,7 +3,7 @@
         <h1>List of Complitas</h1>
         <div v-for="complita in complitas" :key="complita.id" class="complita">
             <router-link :to="{name:'complita', params: {id: complita.id}}">
-                <div>Fajita ID: {{complita.id}}-{{complita.content.meat}}</div>
+                <div>Fajita ID: {{complita.id}}-{{complita.meat.name}}</div>
             </router-link>    
         </div>
     </div>    

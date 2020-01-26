@@ -26,10 +26,10 @@
             <div v-show="topping.name">{{ topping.name }}</div>
             <button @click="addComplita">Wrap this fajita up!</button>
         </div>
-        <div v-if="complitas.length>0" class="complita.id">
+        <div v-if="complitas.length>0">
             <h2>Complitas list</h2>
             <div v-for="complita in complitas" :key="complita.id">
-                {{ complita.id }} - Fajita with {{ complita.content }}
+                {{ complita.id }} - Fajita with {{ complita.meat.name }}
             </div>
         </div> 
     </div>
