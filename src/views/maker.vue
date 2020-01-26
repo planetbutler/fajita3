@@ -21,9 +21,9 @@
         <h2>This fajita currently has:</h2>
         <div class="fajita">
             <div>A warm flour tortilla</div>   
-            <div v-show="this.meatoptions.length>0">{{ content }}</div>
-            <div v-show="this.veggieoptions.length>0">{{ content }}</div>
-            <div v-show="this.toppingoptions.length>0">{{ content }}</div>
+            <div v-show="meat.name">{{ meat.name }}</div>
+            <div v-show="veggie.name">{{ veggie.name }}</div>
+            <div v-show="topping.name">{{ topping.name }}</div>
             <button @click="addComplita">Wrap this fajita up!</button>
         </div>
         <!--<div v-if="complitas.length>0" class="complita.id">
